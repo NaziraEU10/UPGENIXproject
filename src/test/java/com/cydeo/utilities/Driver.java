@@ -46,8 +46,7 @@ public class Driver {
             switch (browserType) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    //WebElement kabulEdiyorum = driver.findElement(By.id("L2AGLb"));
-                    //kabulEdiyorum.click();
+
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
