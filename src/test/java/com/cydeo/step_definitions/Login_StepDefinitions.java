@@ -76,5 +76,13 @@ public class Login_StepDefinitions {
         loginPage.passwordInput.sendKeys(password);
     }
 
+    @Then("User should be able to logout from the {string} account")
+    public void userShouldBeAbleToLogoutFromTheAccount(String username) {
+        loginPage.clickUsernameDropdownBtn(username);
+        BrowserUtils.sleep(2);
+        loginPage.logOutBtn.click();
+        BrowserUtils.sleep(2);
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Login"));
 
+    }
 }

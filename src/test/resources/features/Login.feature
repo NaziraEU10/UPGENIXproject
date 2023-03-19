@@ -9,14 +9,18 @@ Feature: Login feature
     And I enter password "posmanager"
     And Click the login button
     Then User should be able to validate page title
+  Then User should be able to logout from the "POSManager10" account
 
 
-@SalesManager
+
+  @SalesManager
   Scenario: Login as a SalesManager
      Given I am on the login page
      When I enter username  "salesmanager16@info.com"
      And I enter password "salesmanager"
      Then User should be able to validate page title
+    Then User should be able to logout from the "SalesManager16" account
+
 
   Scenario Outline: Login as a SalesManager and PostManager
     Given User should be able to navigate to webpage
@@ -24,7 +28,8 @@ Feature: Login feature
     And User should be able to enter password "<Password>"
     And Click the login button
     Then User should be able to validate page title
-  Examples:
-    |ManagerType            |Password    |
-    |salesmanager16@info.com|salesmanager|
-    |posmanager10@info.com  |posmanager  |
+    Then User should be able to logout from the "<Username>" account
+    Examples:
+    |ManagerType            |Password    |Username|
+    |salesmanager16@info.com|salesmanager|SalesManager16|
+    |posmanager10@info.com  |posmanager  |POSManager10  |
