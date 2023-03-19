@@ -21,7 +21,7 @@ Feature: Login feature
      Then User should be able to validate page title
     Then User should be able to logout from the "SalesManager16" account
 
-
+   @UPGNX10-257
   Scenario Outline: Login as a SalesManager and PostManager
     Given User should be able to navigate to webpage
     When User should be able to enter username "<ManagerType>"
